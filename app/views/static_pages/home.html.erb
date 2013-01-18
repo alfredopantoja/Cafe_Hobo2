@@ -1,12 +1,9 @@
 <div class="center hero-unit">
   <h1>Welcome to Cafe Hobo!</h1>
 
-  <h2>
-    Users:
-  </h2>
   <% @users.each do |user| %>
   	<p>User: <%= link_to user.name, user %></p>
   <% end %>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
 </div>
