@@ -1,0 +1,16 @@
+<%= form_for @blog_post do |f| %>
+  
+  <label>Title:
+  	<p><%= f.text_field :title, autofocus: true %></p>
+  </label>
+
+  <label>Body:
+  	<p><%= f.text_area :body %></p>
+  </label>
+
+  <label>Image URL:
+  	<p><%= f.text_field :image_url %></p>
+  </label>
+
+  <p><%= f.submit "Create", class: 'btn btn-large btn-primary' %></p>
+<% end %>

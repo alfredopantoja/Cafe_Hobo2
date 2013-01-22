@@ -1,0 +1,22 @@
+<h1>All Portfolio Sites</h1>
+
+<%= link_to "Add new portfolio site", new_portfolio_site_path %>
+<hr />
+
+<% @portfolio_sites.each do |portfolio_site| %>
+	
+	<div class="portfolio_site">
+		<h3><%= link_to portfolio_site.name, portfolio_site_path(portfolio_site) %></h3>
+		<p><%= portfolio_site.description %></p>
+		<p>
+			<%= link_to "Edit", edit_portfolio_site_path(portfolio_site) %> |
+			<%= link_to "Delete", portfolio_site_path(portfolio_site), method: :delete %>
+		</p>
+	</div>
+
+<% end %>
+
+
+
+
+

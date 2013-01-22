@@ -1,0 +1,2 @@
+module CodeschoolCoursesHelper
+end

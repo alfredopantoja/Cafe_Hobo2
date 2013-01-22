@@ -1,4 +1,8 @@
 CafeHobo2::Application.routes.draw do
+  resources :portfolio_sites
+  resources :codeschool_courses
+  resources :blog_posts
+
   authenticated :user do
     root to: 'static_pages#home'
   end  

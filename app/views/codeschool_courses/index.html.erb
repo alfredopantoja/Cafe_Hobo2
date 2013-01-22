@@ -1,0 +1,22 @@
+<h1>All Codeschool Courses</h1>
+
+<%= link_to "Add new codeschool course", new_codeschool_course_path %>
+<hr />
+
+<% @codeschool_courses.each do |codeschool_course| %>
+	
+	<div class="codeschool_course">
+		<h3><%= link_to codeschool_course.name, codeschool_course_path(codeschool_course) %></h3>
+		<p><%= codeschool_course.description %></p>
+		<p>
+			<%= link_to "Edit", edit_codeschool_course_path(codeschool_course) %> |
+			<%= link_to "Delete", codeschool_course_path(codeschool_course), method: :delete %>
+		</p>
+	</div>
+
+<% end %>
+
+
+
+
+

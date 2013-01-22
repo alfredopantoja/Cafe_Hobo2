@@ -1,0 +1,24 @@
+<%= form_for @portfolio_site do |f| %>
+  
+  <label>Name:
+    <p><%= f.text_field :name, autofocus: true %></p>
+  </label>
+
+  <label>Description:
+    <p><%= f.text_area :description %></p>
+  </label>
+
+  <label>Screenshot URL:
+    <p><%= f.text_field :screenshot_url %></p>
+  </label>
+
+  <label>Site URL:
+    <p><%= f.text_field :site_url %></p>
+  </label>
+
+  <label>Position:
+    <p><%= f.number_field :position %></p>
+  </label>
+
+  <p><%= f.submit "Create", class: 'btn btn-large btn-primary' %></p>
+<% end %>
