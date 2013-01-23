@@ -1,15 +1,31 @@
 <div class="center hero-unit">
   <h1>Welcome to Cafe Hobo!</h1>
+  <p>Site description.</P>
 
-  <% @users.each do |user| %>
-  	<p>User: <%= link_to user.name, user %></p>
-  <% end %>
-
-  <p><%= link_to "All Blog Posts", blog_posts_path %></p>
-
-  <p><%= link_to "All Portfolio Sites", portfolio_sites_path %></p>
-
-  <p><%= link_to "All Codeschool Courses", codeschool_courses_path %></p>
-
-  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
 </div>
+
+<h2>Portfolio</h2>
+<% @portfolio_sites.each do |portfolio_site| %>
+	
+	<div class="portfolio_site <%= portfolio_site.name %>">
+		<h3><%= portfolio_site.name %></h3>
+		<p><%= portfolio_site.description %></p>
+		<p><a href="http://<%= portfolio_site.site_url %>"><%= portfolio_site.site_url %></a></p>
+	</div>
+
+<% end %>
+
+
+
+<h2>Codeschool Courses</h2>
+<p>I've completed the following courses at <a href="http://codeschool.com">codeschool.com</a></p>
+
+<% @codeschool_courses.each do |codeschool_course| %>
+	
+	<div class="codeschool_course">
+		<h3><%= codeschool_course.name %></h3>
+		<p><%= codeschool_course.description %></p>
+		<%= image_tag(codeschool_course.image_url) %>
+	</div>
+
+<% end %>

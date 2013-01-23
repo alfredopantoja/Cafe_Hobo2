@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-  	@users = User.all
+  	@portfolio_sites = PortfolioSite.all
+  	@codeschool_courses = CodeschoolCourse.all
   end
 
   def help

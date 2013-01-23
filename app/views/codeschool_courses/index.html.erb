@@ -8,6 +8,7 @@
 	<div class="codeschool_course">
 		<h3><%= link_to codeschool_course.name, codeschool_course_path(codeschool_course) %></h3>
 		<p><%= codeschool_course.description %></p>
+		<%= image_tag(codeschool_course.image_url) %>
 		<p>
 			<%= link_to "Edit", edit_codeschool_course_path(codeschool_course) %> |
 			<%= link_to "Delete", codeschool_course_path(codeschool_course), method: :delete %>

@@ -5,9 +5,10 @@
 
 <% @portfolio_sites.each do |portfolio_site| %>
 	
-	<div class="portfolio_site">
+	<div class="portfolio_site <%= portfolio_site.name %>">
 		<h3><%= link_to portfolio_site.name, portfolio_site_path(portfolio_site) %></h3>
 		<p><%= portfolio_site.description %></p>
+		<p><a href="http://<%= portfolio_site.site_url %>"><%= portfolio_site.site_url %></a></p>
 		<p>
 			<%= link_to "Edit", edit_portfolio_site_path(portfolio_site) %> |
 			<%= link_to "Delete", portfolio_site_path(portfolio_site), method: :delete %>
