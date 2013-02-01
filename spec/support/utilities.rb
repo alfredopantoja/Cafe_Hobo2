@@ -1,5 +1,5 @@
 def full_title(page_title)
-  base_title = "Cafe Hobo"
+  base_title = "Ruby Boutique"
   if page_title.empty?
     base_title
   else
