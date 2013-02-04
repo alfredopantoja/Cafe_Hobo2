@@ -1,31 +1,52 @@
-<div class="center hero-unit">
-  <h1>Welcome to Ruby Boutique!</h1>
-  <p>Site description.</P>
-
+<div class="unit" id="inicio">
+  <div class="content">
+    <div class="columns on-2">
+      <div class="column">
+        <img src="./Open Data Monterrey 2013_files/icon.png" alt="" style="padding-left:20%;padding-top:20px;">
+      </div>
+      <div class="column">
+        <h1>Ruby Boutique</h1>
+        <%= image_tag("sep.png") %>
+        <p>
+        <strong>Ruby Boutique</strong> is a boutique Ruby on Rails programming shop. 
+        </p>
+        <%= image_tag("sep.png") %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h2>Portfolio</h2>
-<% @portfolio_sites.each do |portfolio_site| %>
-	
-	<div class="portfolio_site <%= portfolio_site.name %>">
-		<h3><%= portfolio_site.name %></h3>
-		<p><%= portfolio_site.description %></p>
-		<p><a href="http://<%= portfolio_site.site_url %>"><%= portfolio_site.site_url %></a></p>
-	</div>
+<div class="unit" id="social">
+  <div class="container">
+    <span><a href="http://twitter.com/RubyBoutique" target="_blank"><%= image_tag("twitter.png") %></a></span>
+    <span><a href="mailto:railsboutique@gmail.com" target="_blank"><%= image_tag("email.png") %></a></span>
+  </div>
+</div>
 
-<% end %>
+<div class="unit" id="portfolio">
+	<h2>Portfolio</h2>
+	<% @portfolio_sites.each do |portfolio_site| %>
+		
+		<div class="portfolio_site <%= portfolio_site.name %>">
+			<h3><%= portfolio_site.name %></h3>
+			<p><%= portfolio_site.description %></p>
+			<p><a href="http://<%= portfolio_site.site_url %>"><%= portfolio_site.site_url %></a></p>
+		</div>
 
+	<% end %>
+</div>
 
+<div class="unit" id="courses">
+	<h2>Codeschool Courses</h2>
+	<p>I've completed the following courses at <a href="http://codeschool.com">codeschool.com</a></p>
 
-<h2>Codeschool Courses</h2>
-<p>I've completed the following courses at <a href="http://codeschool.com">codeschool.com</a></p>
+	<% @codeschool_courses.each do |codeschool_course| %>
+		
+		<div class="codeschool_course">
+			<h3><%= codeschool_course.name %></h3>
+			<p><%= codeschool_course.description %></p>
+			<%= image_tag(codeschool_course.image_url) %>
+		</div>
 
-<% @codeschool_courses.each do |codeschool_course| %>
-	
-	<div class="codeschool_course">
-		<h3><%= codeschool_course.name %></h3>
-		<p><%= codeschool_course.description %></p>
-		<%= image_tag(codeschool_course.image_url) %>
-	</div>
-
-<% end %>
+	<% end %>
+</div>
